@@ -1,0 +1,137 @@
+.home_section {
+	display: flex;
+	padding-top: 64px;
+	align-items: center;
+	overflow: hidden;
+	justify-content: space-between;
+}
+
+.home_section > * {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.info {
+	gap: 12px;
+	align-items: center;
+	flex-direction: column;
+}
+
+.info > * {
+	width: 25rem;
+}
+
+.info__name {
+	color: hsl(var(--text-color-primary));
+}
+
+.info h2 {
+	font-size: 1.5rem;
+	font-weight: 500;
+	margin-top: 12px;
+}
+
+.info p {
+	margin-top: 12px;
+	font-weight: 400;
+	line-height: 24px;
+	text-wrap: pretty;
+	color: hsl(var(--text-color-secondary));
+}
+
+.info__links {
+	gap: 12px;
+	display: flex;
+	align-items: center;
+}
+
+.info__links .link {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	font-size: 1.625rem;
+	color: hsl(var(--text-color-secondary));
+}
+
+.info__links .link:hover {
+	color: hsl(var(--text-color-primary));
+}
+
+.image {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	animation: image-animation 1s forwards ease;
+}
+
+.image img {
+	width: 8.75rem;
+	max-height: 11.25rem;
+	border-radius: 50%;
+	background-color: hsl(var(--accent-color));
+	border: 12px solid hsla(var(--primary-color));
+	box-shadow: 0px 2px 8px 2px hsla(var(--border-color), 0.4);
+}
+
+.image span {
+	color: #fff;
+	font-size: 0.875rem;
+	padding: 6px 14px;
+	border-radius: 8px;
+	translate: 0 -25px;
+	text-align: center;
+	background-color: #10b981;
+}
+
+@keyframes image-animation {
+	0% {
+		opacity: 0;
+		translate: 0 -70px;
+	}
+	100% {
+		opacity: 1;
+		translate: 0 0;
+	}
+}
+
+@media (max-width: 48rem) {
+	.home_section {
+		gap: 24px;
+		padding-top: 32px;
+		flex-direction: column-reverse;
+	}
+}
+
+@media (max-width: 40rem) {
+	.info > * {
+		width: 100%;
+	}
+}
+
+@media (max-width: 26.562rem) {
+	.info h2 {
+		font-size: 1.25rem;
+	}
+
+	.info p {
+		font-size: 1rem;
+	}
+
+	.info__name {
+		text-align: center;
+	}
+
+	.info__links {
+		gap: 24px;
+		justify-content: center;
+	}
+
+	.info__links .link {
+		font-size: 2rem;
+	}
+
+	.image img {
+		width: 100%;
+	}
+}

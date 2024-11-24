@@ -1,0 +1,57 @@
+<div id='cursor_shadow' class='cursor_shadow'></div>
+
+<style>
+	.cursor_shadow {
+		position: fixed;
+		opacity: 0;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		width: 400px;
+		height: 400px;
+		border-radius: 50%;
+		transition: opacity 0.4s linear;
+		filter: blur(80px) brightness(1.2);
+		background: hsla(var(--cursor-shadow-color));
+		box-shadow:
+			0 0 10px 20px hsla(var(--cursor-shadow-color), 0.9),
+			0 0 10px 40px hsla(var(--cursor-shadow-color), 0.8),
+			0 0 10px 60px hsla(var(--cursor-shadow-color), 0.7),
+			0 0 10px 80px hsla(var(--cursor-shadow-color), 0.6),
+			0 0 10px 100px hsla(var(--cursor-shadow-color), 0.5),
+			0 0 10px 120px hsla(var(--cursor-shadow-color), 0.4),
+			0 0 10px 140px hsla(var(--cursor-shadow-color), 0.4),
+			0 0 10px 160px hsla(var(--cursor-shadow-color), 0.2),
+			0 0 10px 180px hsla(var(--cursor-shadow-color), 0.1);
+	}
+
+	@media (max-width: 640px) {
+		.cursor_shadow {
+			display: none;
+		}
+	}
+</style>
+
+<script is:inline>
+	document.addEventListener('astro:page-load', () => {
+		const $cursor_shadow = document.getElementById('cursor_shadow');
+
+		document.addEventListener('pointerenter', (e) => {
+			updateShadowPosition(e.screenX, e.screenY);
+		});
+
+		document.addEventListener('pointerleave', () => {
+			$cursor_shadow.style.opacity = '0';
+		});
+
+		document.addEventListener('pointermove', (e) => {
+			updateShadowPosition(e.screenX, e.screenY);
+		});
+
+		const updateShadowPosition = (x, y) => {
+			$cursor_shadow.style.opacity = '1';
+			$cursor_shadow.style.top = y - 80 - $cursor_shadow.clientHeight / 2 + 'px';
+			$cursor_shadow.style.left = x - $cursor_shadow.clientWidth / 2 + 'px';
+		};
+	});
+</script>

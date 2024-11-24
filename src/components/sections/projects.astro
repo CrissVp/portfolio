@@ -1,0 +1,144 @@
+---
+import SectionLayout from 'src/layouts/SectionLayout.astro';
+import LinkIcon from '/icons/link-icon.svg?raw';
+import styles from '@styles/projects.module.css';
+import type { I18N_TYPES } from 'src/types/i18n';
+
+interface Props {
+	i18n: I18N_TYPES['PROJECTS_SECTION'];
+}
+
+const { i18n } = Astro.props;
+
+const PROJECTS = [
+	{
+		title: i18n.PROJECTS[0].TITLE,
+		links: [
+			{
+				url: 'https://github.com/CrissVp/genshin_characters_wiki',
+				title: i18n.CODE_BUTTON
+			},
+			{
+				url: 'https://genshin-characters-wiki.vercel.app/',
+				title: i18n.LIVE_BUTTON
+			}
+		],
+		img: '/screenshots/genshin_characters_wiki.webp',
+		description: i18n.PROJECTS[0].DESCRIPTION,
+		technologies: ['JavaScript', 'Next.js', 'SCSS', 'CSS']
+	},
+	{
+		title: i18n.PROJECTS[1].TITLE,
+		links: [
+			{
+				url: 'https://github.com/CrissVp/space-tourism-website',
+				title: i18n.CODE_BUTTON
+			},
+			{
+				url: 'https://crissvp.github.io/space-tourism-website/',
+				title: i18n.LIVE_BUTTON
+			}
+		],
+		img: '/screenshots/space_tourism_website.webp',
+		description: i18n.PROJECTS[1].DESCRIPTION,
+		technologies: ['Astro', 'CSS']
+	},
+	{
+		title: i18n.PROJECTS[2].TITLE,
+		links: [
+			{
+				url: 'https://github.com/CrissVp/easybank-landing-page',
+				title: i18n.CODE_BUTTON
+			},
+			{
+				url: 'https://crissvp.github.io/easybank-landing-page/',
+				title: i18n.LIVE_BUTTON
+			}
+		],
+		img: '/screenshots/easybank_landing_page.webp',
+		description: i18n.PROJECTS[2].DESCRIPTION,
+		technologies: ['Astro', 'CSS']
+	},
+	{
+		title: i18n.PROJECTS[3].TITLE,
+		links: [
+			{
+				url: 'https://github.com/CrissVp/rest-countries',
+				title: i18n.CODE_BUTTON
+			},
+			{ url: 'https://crissvp.github.io/rest-countries/', title: i18n.LIVE_BUTTON }
+		],
+		img: '/screenshots/rest_countries.webp',
+		description: i18n.PROJECTS[3].DESCRIPTION,
+		technologies: ['Next.js', 'TypeScript', 'Axios', 'CSS']
+	},
+	{
+		title: i18n.PROJECTS[4].TITLE,
+		links: [
+			{
+				url: 'https://github.com/CrissVp/interactive-comments-section',
+				title: i18n.CODE_BUTTON
+			},
+			{
+				url: 'https://crissvp.github.io/interactive-comments-section/',
+				title: i18n.LIVE_BUTTON
+			}
+		],
+		img: '/screenshots/interactive_comments_section.webp',
+		description: i18n.PROJECTS[4].DESCRIPTION,
+		technologies: ['React', 'CSS']
+	},
+	{
+		title: i18n.PROJECTS[5].TITLE,
+		links: [
+			{
+				url: 'https://github.com/CrissVp/rock-paper-scissors',
+				title: i18n.CODE_BUTTON
+			},
+			{
+				url: 'https://crissvp.github.io/rock-paper-scissors/',
+				title: i18n.LIVE_BUTTON
+			}
+		],
+		img: '/screenshots/rock_paper_scissors.webp',
+		description: i18n.PROJECTS[5].DESCRIPTION,
+		technologies: ['React', 'CSS']
+	}
+];
+---
+
+<SectionLayout sectionId='projects'>
+	<h2>{i18n.TITLE}</h2>
+	<ul class={styles.projects}>
+		{
+			PROJECTS.map((project) => (
+				<li class={`reveal_animation ${styles.project}`}>
+					<div class={styles.project__image}>
+						<img src={project.img} alt={project.title} />
+					</div>
+					<div class={styles.project__info}>
+						<h4>{project.title}</h4>
+						<p>{project.description}</p>
+						<ul class={styles.project__links}>
+							{project.links.map((link) => (
+								<li>
+									<a target='_blank' class={styles.link} href={link.url}>
+										<Fragment set:html={LinkIcon} />
+										{link.title}
+									</a>
+								</li>
+							))}
+						</ul>
+						<ul class={styles.project__technologies}>
+							{project.technologies.map((technology) => (
+								<li class={styles.technology}>
+									<span>{technology}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+				</li>
+			))
+		}
+	</ul>
+</SectionLayout>

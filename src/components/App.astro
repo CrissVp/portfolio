@@ -1,0 +1,31 @@
+---
+import Layout from 'src/layouts/Layout.astro';
+
+import CursorShadow from '@components/UI/CursorShadow.astro';
+import Header from '@components/UI/Header.astro';
+
+import Projects from '@components/sections/projects.astro';
+import Contact from '@components/sections/contact.astro';
+import Skills from '@components/sections/skills.astro';
+import About from '@components/sections/about.astro';
+import Home from '@components/sections/home.astro';
+
+import type { LANGUAGES } from 'src/types/i18n';
+import { getI18N } from '@i18n/utils';
+
+const { currentLocale } = Astro;
+const lang = currentLocale as LANGUAGES;
+const i18n = getI18N({ currentLocale: lang });
+---
+
+<Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION} lang={currentLocale}>
+	<Header i18n={i18n.HEADER} />
+	<main>
+		<Home i18n={i18n.HOME_SECTION} />
+		<Skills i18n={i18n.SKILLS_SECTION} />
+		<Projects i18n={i18n.PROJECTS_SECTION} />
+		<About i18n={i18n.ABOUT_SECTION} />
+		<Contact i18n={i18n.CONTACT_SECTION} />
+	</main>
+	<CursorShadow />
+</Layout>

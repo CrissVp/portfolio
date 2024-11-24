@@ -1,0 +1,98 @@
+---
+import ThemeSwitch from '@components/UI/ThemeSwitch.astro';
+import LanguageSwitch from './LanguageSwitch.astro';
+import NameTag from '@components/UI/NameTag.astro';
+import type { I18N_TYPES } from 'src/types/i18n';
+
+interface Props {
+	i18n: I18N_TYPES['HEADER'];
+}
+
+const { i18n } = Astro.props;
+---
+
+<header class='header'>
+	<nav class='header__nav'>
+		<a href='#home'>
+			<NameTag styleClasses={'hover'}>{i18n.TITLE}</NameTag>
+		</a>
+
+		<div class='nav__links'>
+			<a href='#home'>{i18n.HOME_LINK}</a>
+			<a href='#skills'>{i18n.SKILLS_LINK}</a>
+			<a href='#projects'>{i18n.PROJECTS_LINK}</a>
+			<a href='#about'>{i18n.ABOUT_LINK}</a>
+			<a href='#contact'>{i18n.CONTACT_LINK}</a>
+		</div>
+
+		<div class='nav__buttons'>
+			<ThemeSwitch />
+			<LanguageSwitch />
+		</div>
+	</nav>
+</header>
+
+<style>
+	.header {
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		animation: header-transparency linear both;
+		animation-timeline: scroll();
+		animation-range: 0 200px;
+		background-color: transparent;
+	}
+
+	.header__nav {
+		height: 80px;
+		display: flex;
+		margin: 0 auto;
+		max-width: 64rem;
+		padding-inline: 20px;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.header__nav > a {
+		position: relative;
+
+		span {
+			& > * {
+				font-size: 1.5rem !important;
+			}
+		}
+	}
+
+	.nav__links {
+		gap: 24px;
+		display: flex;
+	}
+
+	.nav__links a:hover {
+		text-decoration: underline;
+		color: hsl(var(--text-color-primary));
+	}
+
+	.nav__buttons {
+		gap: 12px;
+		display: flex;
+		align-items: center;
+	}
+
+	@keyframes header-transparency {
+		100% {
+			backdrop-filter: blur(20px);
+			background-color: hsla(var(--background-color), 0.6);
+		}
+	}
+
+	@media (max-width: 40rem) {
+		.nav__links {
+			display: none;
+		}
+
+		.nav__buttons {
+			gap: 6px;
+		}
+	}
+</style>

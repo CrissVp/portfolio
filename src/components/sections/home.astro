@@ -1,0 +1,41 @@
+---
+import NameTag from '@components/UI/NameTag.astro';
+import MailIcon from '/icons/mail-icon.svg?raw';
+import CVIcon from '/icons/cv-icon.svg?raw';
+import GitHubIcon from '/icons/github-icon.svg?raw';
+import styles from '@styles/home.module.css';
+import type { I18N_TYPES } from 'src/types/i18n';
+
+interface Props {
+	i18n: I18N_TYPES['HOME_SECTION'];
+}
+
+const { i18n } = Astro.props;
+---
+
+<section id='home' class={styles.home_section}>
+	<div class={styles.info}>
+		<div class={styles.info__name}>
+			<h1>
+				<NameTag styleClasses={'animated'}>{i18n.TITLE}</NameTag>
+			</h1>
+			<h2>{i18n.SUB_TITLE}</h2>
+			<p>{i18n.DESCRIPTION}</p>
+		</div>
+		<div class={styles.info__links}>
+			<a class={styles.link} href='mailto:crissvph@gmail.com'>
+				<Fragment set:html={MailIcon} />
+			</a>
+			<a class={styles.link} href='https://github.com/CrissVp' target='_blank'>
+				<Fragment set:html={GitHubIcon} />
+			</a>
+			<a class={styles.link} href='/Cristian_Pérez_CV.pdf' target='_blank'>
+				<Fragment set:html={CVIcon} />
+			</a>
+		</div>
+	</div>
+	<div class={styles.image}>
+		<img src='/drink_coffee.svg' alt='' />
+		<span>{i18n.AVAILABILITY}</span>
+	</div>
+</section>

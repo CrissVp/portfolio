@@ -1,0 +1,129 @@
+---
+import SectionLayout from 'src/layouts/SectionLayout.astro';
+import ProfileIcon from '/icons/profile-icon.svg?raw';
+import ArrowIcon from '/icons/arrow-icon.svg?raw';
+import BooksIcon from '/icons/books-icon.svg?raw';
+import BrowserIcon from '/icons/browser-icon.svg?raw';
+import CodeIcon from '/icons/code-icon.svg?raw';
+import styles from '@styles/about.module.css';
+import type { I18N_TYPES } from 'src/types/i18n';
+
+interface Props {
+	i18n: I18N_TYPES['ABOUT_SECTION'];
+}
+
+const { i18n } = Astro.props;
+
+const ABOUT_ME_SECTIONS = [
+	{
+		icon: ProfileIcon,
+		title: i18n.WHO_I_AM.TITLE,
+		description: i18n.WHO_I_AM.TEXT
+	},
+	{
+		icon: BooksIcon,
+		title: i18n.STUDIES.TITLE,
+		description: i18n.STUDIES.TEXT
+	},
+	{
+		icon: BrowserIcon,
+		title: i18n.USER_EXPERIENCE.TITLE,
+		description: i18n.USER_EXPERIENCE.TEXT
+	},
+	{
+		icon: CodeIcon,
+		title: i18n.CLEAN_CODE.TITLE,
+		description: i18n.CLEAN_CODE.TEXT
+	}
+];
+
+const CERTIFICATIONS = [
+	{
+		name: 'FullStackOpen',
+		image: '/certifications/certificate-fullstack.png',
+		url: 'https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/dfd2910b92346a474213066cbcbeae4f'
+	},
+	{
+		name: 'FullStackOpen GraphQL',
+		image: '/certifications/certificate-graphql.png',
+		url: 'https://studies.cs.helsinki.fi/stats/api/certificate/fs-graphql/en/13dd7dd432046cd067cf5ec8926e1611'
+	},
+	{
+		name: 'FullStackOpen TypeScript',
+		image: '/certifications/certificate-typescript.png',
+		url: 'https://studies.cs.helsinki.fi/stats/api/certificate/fs-typescript/en/097d6d2b75e16c46a4be86085fd431d2'
+	},
+	{
+		name: 'FullStackOpen React Native',
+		image: '/certifications/certificate-reactnative.png',
+		url: 'https://studies.cs.helsinki.fi/stats/api/certificate/fs-react-native-2020/en/2072e4244b2ae77e4d589cb07e5db3c0'
+	}
+];
+
+const COURSE_REPOSITORIES = [
+	{
+		url: 'https://github.com/CrissVp/rate-repository-app',
+		title: i18n.COURSES_REPOSITORIES[0].TITLE,
+		description: i18n.COURSES_REPOSITORIES[0].DESCRIPTION,
+		technologies: ['ReactNative', 'GraphQL', 'Apollo Client']
+	},
+	{
+		url: 'https://github.com/CrissVp/fullstackopen',
+		title: i18n.COURSES_REPOSITORIES[1].TITLE,
+		description: i18n.COURSES_REPOSITORIES[1].DESCRIPTION,
+		technologies: ['ReactNative', 'GraphQL', 'Apollo Client']
+	}
+];
+---
+
+<SectionLayout sectionId='about'>
+	<h2>{i18n.TITLE}</h2>
+	<div class={styles.about_cards}>
+		{
+			ABOUT_ME_SECTIONS.map((section) => (
+				<div class={`reveal_animation ${styles.item}`}>
+					<Fragment set:html={section.icon} />
+					<h4>{section.title}</h4>
+					<p>{section.description}</p>
+				</div>
+			))
+		}
+	</div>
+	<div class={styles.courses}>
+		<div class={`reveal_animation ${styles.courses__certification}`}>
+			<h4>{i18n.SUBTITLES.CERTIFICATIONS}</h4>
+			<div class={styles.certifications}>
+				{
+					CERTIFICATIONS.map((certification) => (
+						<a
+							class={`reveal_animation ${styles.certification}`}
+							href={certification.url}
+							target='_blank'
+						>
+							<img src={certification.image} alt={`${certification.name} Certificate`} />
+							<span>{certification.name}</span>
+						</a>
+					))
+				}
+			</div>
+		</div>
+		<div class={`reveal_animation ${styles.courses__repositories}`}>
+			<h4>{i18n.SUBTITLES.COURSE_REPOSITORIES}</h4>
+			<div class={styles.repositories}>
+				{
+					COURSE_REPOSITORIES.map((repository) => (
+						<a
+							class={`reveal_animation ${styles.repository}`}
+							href={repository.url}
+							target='_blank'
+						>
+							<Fragment set:html={ArrowIcon} />
+							<h6>{repository.title}</h6>
+							<p>{repository.description}</p>
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</SectionLayout>

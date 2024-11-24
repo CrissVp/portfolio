@@ -1,0 +1,106 @@
+{
+	"SEO_TITLE": "Cristian Perez - Portfolio",
+	"SEO_DESCRIPTION": "Cristian Perez - Front-End Developer Portfolio.",
+	"HEADER": {
+		"TITLE": "Cristian Perez",
+		"HOME_LINK": "Home",
+		"SKILLS_LINK": "Skills",
+		"PROJECTS_LINK": "Projects",
+		"ABOUT_LINK": "About Me",
+		"CONTACT_LINK": "Contact"
+	},
+	"HOME_SECTION": {
+		"TITLE": "Cristian Perez",
+		"SUB_TITLE": "Front-End Developer",
+		"DESCRIPTION": "I build engaging and accessible digital experiences.",
+		"AVAILABILITY": "Available for work"
+	},
+	"SKILLS_SECTION": {
+		"TITLE": "SKILLS"
+	},
+	"PROJECTS_SECTION": {
+		"TITLE": "PROJECTS",
+		"CODE_BUTTON": "Code",
+		"LIVE_BUTTON": "Demo",
+		"PROJECTS": [
+			{
+				"TITLE": "Genshin Impact Characters Wiki",
+				"DESCRIPTION": "Characters Wiki Site created using Next.js and recreating Hoyolab's wiki design. This project allows to get information about characters, visualize their habilities, idle animations, skins and much more."
+			},
+			{
+				"TITLE": "Space Tourism Website",
+				"DESCRIPTION": "The objective is to create a visually attractive website to promotion space travels, and see all information related to the project, including destinations, crew and technologies. Frontend Mentor Challenge."
+			},
+			{
+				"TITLE": "Easybank Landing Page",
+				"DESCRIPTION": "The objective is to build a clean and modern website designed to showcase banking services. Frontend Mentor Challenge."
+			},
+			{
+				"TITLE": "Countries APP",
+				"DESCRIPTION": "This project provides an interactive platform to explore information about countries around the world. Users can browse through a list of countries, view details such as population, area, capital, and languages spoken. Frontend Mentor Challenge."
+			},
+			{
+				"TITLE": "Interactive Comments Section",
+				"DESCRIPTION": "This page showcases a dynamic and user-friendly comments feature that allows users to engage in discussions. It includes functionalities like posting comments, replying to others, and editing or deleting messages. Frontend Mentor Challenge."
+			},
+			{
+				"TITLE": "Rock, Paper, Scissors Game",
+				"DESCRIPTION": "This page offers a simple and engaging web-based game where users can play the classic hand game against the computer. Frontend Mentor Challenge."
+			}
+		]
+	},
+	"ABOUT_SECTION": {
+		"TITLE": "ABOUT ME",
+		"SUBTITLES": {
+			"CERTIFICATIONS": "Certifications",
+			"COURSE_REPOSITORIES": "Course Repositories"
+		},
+		"WHO_I_AM": {
+			"TITLE": "Who I am?",
+			"TEXT": "I’m Cristian! I’m a passionate front-end developer with a love for creating intuitive and engaging user experiences. With a strong background in HTML, CSS, JavaScript and React, I thrive on transforming ideas into visually appealing and functional websites."
+		},
+		"STUDIES": {
+			"TITLE": "Studies",
+			"TEXT": "My learning journey has been shaped by a mix of online courses, tutorials, and hands-on projects. I love the thrill of discovering new technologies and concepts, allowing me to adapt quickly in this ever-evolving field. This approach not only enhances my technical skills but also fosters a growth mindset that keeps me curious and motivated."
+		},
+		"USER_EXPERIENCE": {
+			"TITLE": "User Experience",
+			"TEXT": "User experience is at the heart of my design philosophy. I prioritize intuitive navigation and fast load times, knowing that these elements are essential for keeping visitors engaged. I also pay close attention to touch-friendly design, ensuring that interactive elements are easy to tap and interact with on mobile devices."
+		},
+		"CLEAN_CODE": {
+			"TITLE": "Clean Code",
+			"TEXT": "I’m dedicated to crafting clean and readable code that not only works well but is also easy for others to understand and maintain. In addition to adhering to coding best practices, I enjoy leveraging tools like linters and formatters to maintain consistency across my codebase."
+		},
+		"COURSES_REPOSITORIES": [
+			{
+				"TITLE": "Rate Repository App",
+				"DESCRIPTION": "Full Stack Open - React Native Course App.\nThis repository was created to solve the course exercises, ending with a full working mobile app that allows users to retrieve information about GitHub repositories, rate and give a review."
+			},
+			{
+				"TITLE": "Full Stack Open Course Repository",
+				"DESCRIPTION": "This repository contains the solutions to exercises from different Full Stack Open courses, which focus on full-stack web development using technologies such as React, Express.js, GraphQL, MongoDB, and TypeScript."
+			}
+		]
+	},
+	"CONTACT_SECTION": {
+		"TITLE": "GET IN TOUCH",
+		"SUBTITLE": "Have some idea for a proyect?\nFeel free to send me a message!",
+		"NOTIFICATION": "Thank you for leaving your message.\nI’ll get back to you as soon as possible.",
+		"ERROR": "There was an error sending your message.\nPlease try again later.",
+		"NAME_INPUT": {
+			"TITLE": "Name",
+			"INVALID": "Name must be at least 5 characters long.",
+			"REQUIRED": "This field is required."
+		},
+		"EMAIL_INPUT": {
+			"TITLE": "Email",
+			"INVALID": "Invalid email.",
+			"REQUIRED": "This field is required."
+		},
+		"MESSAGE_INPUT": {
+			"TITLE": "Message",
+			"REQUIRED": "This field is required."
+		},
+		"BUTTON_TEXT": "SEND MESSAGE"
+	}
+}

@@ -1,0 +1,26 @@
+---
+import SectionLayout from 'src/layouts/SectionLayout.astro';
+import ContactForm from '@components/UI/ContactForm';
+
+import styles from '@styles/contact.module.css';
+import type { I18N_TYPES } from 'src/types/i18n';
+
+interface Props {
+	i18n: I18N_TYPES['CONTACT_SECTION'];
+}
+
+const { i18n } = Astro.props;
+---
+
+<SectionLayout sectionId='contact'>
+	<div class={styles.contact_form}>
+		<div class={`reveal_animation ${styles.contact__texts}`}>
+			<h2>{i18n.TITLE}</h2>
+			<p>
+				{i18n.SUBTITLE}
+			</p>
+		</div>
+
+		<ContactForm i18n={i18n} client:load />
+	</div>
+</SectionLayout>

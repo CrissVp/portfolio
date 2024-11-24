@@ -1,0 +1,77 @@
+---
+import SectionLayout from 'src/layouts/SectionLayout.astro';
+import HtmlIcon from '/logos/html-logo.svg?raw';
+import CssIcon from '/logos/css-logo.svg?raw';
+import JavaScriptIcon from '/logos/javascript-logo.svg?raw';
+import ReactIcon from '/logos/react-logo.svg?raw';
+import NextjsLogo from '/logos/nextjs-logo.svg?raw';
+import TypeScriptLogo from '/logos/typescript-logo.svg?raw';
+import GitLogo from '/logos/git-logo.svg?raw';
+import NodejsLogo from '/logos/nodejs-logo.svg?raw';
+import AstroLogo from '/logos/astro-logo.svg?raw';
+import styles from '@styles/skills.module.css';
+import type { I18N_TYPES } from 'src/types/i18n';
+
+interface Props {
+	i18n: I18N_TYPES['SKILLS_SECTION'];
+}
+
+const { i18n } = Astro.props;
+
+const SKILLS = [
+	{
+		name: 'HTML',
+		icon: HtmlIcon
+	},
+	{
+		name: 'CSS',
+		icon: CssIcon
+	},
+	{
+		name: 'JAVASCRIPT',
+		icon: JavaScriptIcon
+	},
+	{
+		name: 'REACT',
+		icon: ReactIcon
+	},
+	{
+		name: 'NEXT.JS',
+		icon: NextjsLogo
+	},
+	{
+		name: 'TYPESCRIPT',
+		icon: TypeScriptLogo
+	},
+	{
+		name: 'GIT',
+		icon: GitLogo
+	},
+	{
+		name: 'NODE.JS',
+		icon: NodejsLogo
+	},
+	{
+		name: 'ASTRO',
+		icon: AstroLogo
+	},
+	{
+		name: 'REACT NATIVE',
+		icon: ReactIcon
+	}
+];
+---
+
+<SectionLayout sectionId='skills'>
+	<h2>{i18n.TITLE}</h2>
+	<div class={styles.skills__cards}>
+		{
+			SKILLS.map((skill) => (
+				<div class={`reveal_animation ${styles.skill__card}`}>
+					<Fragment set:html={skill.icon} />
+					<span>{skill.name}</span>
+				</div>
+			))
+		}
+	</div>
+</SectionLayout>

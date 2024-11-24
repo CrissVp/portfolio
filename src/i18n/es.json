@@ -1,0 +1,106 @@
+{
+	"SEO_TITLE": "Cristian Pérez - Portfolio",
+	"SEO_DESCRIPTION": "Cristian Pérez - Desarrollador Front-End Portafolio.",
+	"HEADER": {
+		"TITLE": "Cristian Perez",
+		"HOME_LINK": "Inicio",
+		"SKILLS_LINK": "Habilidades",
+		"PROJECTS_LINK": "Proyectos",
+		"ABOUT_LINK": "Sobre mí",
+		"CONTACT_LINK": "Contacto"
+	},
+	"HOME_SECTION": {
+		"TITLE": "Cristian Pérez",
+		"SUB_TITLE": "Desarrollador Front-End",
+		"DESCRIPTION": "Creo experiencias digitales atractivas y accesibles.",
+		"AVAILABILITY": "Disponible para trabajar"
+	},
+	"SKILLS_SECTION": {
+		"TITLE": "HABILIDADES"
+	},
+	"PROJECTS_SECTION": {
+		"TITLE": "PROYECTOS",
+		"CODE_BUTTON": "Codigo",
+		"LIVE_BUTTON": "Demo",
+		"PROJECTS": [
+			{
+				"TITLE": "Genshin Impact Characters Wiki",
+				"DESCRIPTION": "Sitio Wiki de personajes creado con Next.js y recreando el diseño de la wiki de Hoyolab. Este proyecto permite obtener información sobre los personajes, visualizar sus habilidades, animaciones de inactividad, skins y mucho más."
+			},
+			{
+				"TITLE": "Space Tourism Website",
+				"DESCRIPTION": "El objetivo es crear un sitio web visualmente atractivo para promocionar los viajes espaciales, y ver toda la información relacionada con el proyecto, incluidos destinos, tripulación y tecnologías. Desafío de Frontend Mentor."
+			},
+			{
+				"TITLE": "Easybank Landing Page",
+				"DESCRIPTION": "El objetivo es crear un sitio web limpio y moderno diseñado para mostrar servicios bancarios. Desafío de Frontend Mentor."
+			},
+			{
+				"TITLE": "Countries APP",
+				"DESCRIPTION": "Este proyecto ofrece una plataforma interactiva para explorar información sobre países de todo el mundo. Los usuarios pueden navegar por una lista de países y ver detalles como población, superficie, capital e idiomas hablados. Desafío de Frontend Mentor."
+			},
+			{
+				"TITLE": "Interactive Comments Section",
+				"DESCRIPTION": "Esta página presenta una función de comentarios dinámica y fácil de usar que permite a los usuarios participar en debates. Incluye funciones como publicar comentarios, responder a otros y editar o eliminar mensajes. Desafío de Frontend Mentor."
+			},
+			{
+				"TITLE": "Rock, Paper, Scissors Game",
+				"DESCRIPTION": "Esta página ofrece un juego web sencillo y atractivo donde los usuarios pueden jugar el clásico juego de manos contra la computadora. Desafío de Frontend Mentor."
+			}
+		]
+	},
+	"ABOUT_SECTION": {
+		"TITLE": "SOBRE MÍ",
+		"SUBTITLES": {
+			"CERTIFICATIONS": "Certificaciones",
+			"COURSE_REPOSITORIES": "Repositorios de Cursos"
+		},
+		"WHO_I_AM": {
+			"TITLE": "¿Quién soy?",
+			"TEXT": "Soy Cristian! Soy un apasionado del desarrollo front-end y me encanta crear experiencias de usuario intuitivas y atractivas. Con una sólida formación en HTML, CSS, JavaScript y React, me encanta transformar ideas en sitios web visualmente atractivos y funcionales."
+		},
+		"STUDIES": {
+			"TITLE": "Estudios",
+			"TEXT": "Mi recorrido de aprendizaje ha estado marcado por una combinación de cursos en línea, tutoriales y proyectos prácticos. Me encanta la emoción de descubrir nuevas tecnologías y conceptos, lo que me permite adaptarme rápidamente en este campo en constante evolución. Este enfoque no solo mejora mis habilidades técnicas, sino que también fomenta una mentalidad de crecimiento que me mantiene curioso y motivado."
+		},
+		"USER_EXPERIENCE": {
+			"TITLE": "Experiencia de usuario",
+			"TEXT": "La experiencia del usuario es el eje de mi filosofía de diseño. Priorizo ​​la navegación intuitiva y los tiempos de carga rápidos, sabiendo que estos elementos son esenciales para mantener la atención de los visitantes. También presto mucha atención al diseño táctil, asegurándome de que los elementos interactivos sean fáciles de tocar e interactuar con ellos en dispositivos móviles."
+		},
+		"CLEAN_CODE": {
+			"TITLE": "Código limpio",
+			"TEXT": "Me dedico a crear código limpio y legible que no solo funcione bien, sino que también sea fácil de entender y mantener para otros. Además de cumplir con las mejores prácticas de codificación, disfruto de aprovechar herramientas como linters y formateadores para mantener la coherencia en mi base de código."
+		},
+		"COURSES_REPOSITORIES": [
+			{
+				"TITLE": "Rate Repository App",
+				"DESCRIPTION": "Full Stack Open - Aplicación del curso de React Native.\nEste repositorio fue creado para resolver los ejercicios del curso y finalizar con una aplicación móvil completamente funcional que permite a los usuarios recuperar información sobre los repositorios de GitHub, calificarlos y dar una reseña."
+			},
+			{
+				"TITLE": "Repositorio del Curso Full Stack Open",
+				"DESCRIPTION": "Este repositorio contiene las soluciones a los ejercicios de diferentes cursos de Full Stack Open, los cuales se enfocan en el desarrollo web full-stack utilizando tecnologías como React, Express.js, GraphQL, MongoDB y TypeScript."
+			}
+		]
+	},
+	"CONTACT_SECTION": {
+		"TITLE": "PONTE EN CONTACTO",
+		"SUBTITLE": "¿Tienes alguna idea para un proyecto?\n¡No dudes en enviarme un mensaje!",
+		"NOTIFICATION": "Gracias por dejar tu mensaje.\nMe pondré en contacto contigo lo antes posible.",
+		"ERROR": "Se produjo un error al enviar su mensaje.\nInténtelo nuevamente más tarde.",
+		"NAME_INPUT": {
+			"TITLE": "Nombre",
+			"INVALID": "El nombre debe tener al menos 5 caracteres.",
+			"REQUIRED": "Este campo es obligatorio."
+		},
+		"EMAIL_INPUT": {
+			"TITLE": "Email",
+			"INVALID": "Email invalido.",
+			"REQUIRED": "Este campo es obligatorio."
+		},
+		"MESSAGE_INPUT": {
+			"TITLE": "Mensaje",
+			"REQUIRED": "Este campo es obligatorio."
+		},
+		"BUTTON_TEXT": "ENVIAR MENSAJE"
+	}
+}

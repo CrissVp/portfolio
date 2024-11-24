@@ -1,0 +1,33 @@
+---
+import { LANGUAGES } from 'src/types/i18n';
+import LangIcon from '/icons/world-icon.svg?raw';
+
+const { currentLocale } = Astro;
+const href = currentLocale === LANGUAGES.ES ? '/en/' : '/';
+const lang = currentLocale;
+---
+
+<div class='language_switcher'>
+	<a href={href}>
+		<Fragment set:html={LangIcon} />
+		<span>{lang}</span>
+	</a>
+</div>
+
+<style>
+	.language_switcher a {
+		gap: 8px;
+		display: flex;
+		font-size: 2rem;
+		color: hsl(var(--text-color-secondary));
+	}
+
+	.language_switcher a:hover {
+		color: hsl(var(--text-color-primary));
+	}
+
+	.language_switcher a span {
+		font-size: 1rem;
+		text-transform: uppercase;
+	}
+</style>

@@ -1,0 +1,103 @@
+---
+import CodeSlashEnd from '/icons/code-slash-end.svg?raw';
+import CodeSlashStart from '/icons/code-slash-start.svg?raw';
+
+const { styleClasses = '' } = Astro.props;
+---
+
+<span class={`name_tag ${styleClasses}`}>
+	<Fragment set:html={CodeSlashStart} />
+	<strong>
+		<slot />
+	</strong>
+	<Fragment set:html={CodeSlashEnd} />
+</span>
+
+<style>
+	.name_tag {
+		gap: 12px;
+		display: flex;
+		font-size: 3rem;
+		font-weight: 300;
+		align-items: center;
+		color: hsl(var(--text-color));
+
+		svg {
+			font-size: 2.25rem;
+			color: hsl(var(--primary-color));
+		}
+	}
+
+	.name_tag strong {
+		font-weight: 700;
+		overflow: hidden;
+		text-wrap: nowrap;
+		letter-spacing: -1.2px;
+		color: hsl(var(--text-color-primary));
+	}
+
+	.animated strong {
+		max-width: 0;
+		animation: name-animation 1.5s forwards ease;
+	}
+
+	.hover {
+		gap: 4px;
+		position: absolute;
+
+		strong {
+			max-width: 0;
+			opacity: 0.8;
+			font-weight: 600;
+			transition: max-width 1s ease;
+		}
+
+		&:hover {
+			strong {
+				max-width: 18.75rem;
+			}
+		}
+	}
+
+	@keyframes name-animation {
+		100% {
+			max-width: 25rem;
+		}
+	}
+
+	@media (max-width: 64rem) {
+		.name_tag {
+			font-size: 2.625rem;
+
+			svg {
+				font-size: 1.75rem;
+				color: hsl(var(--primary-color));
+			}
+		}
+
+		.hover {
+			position: relative;
+
+			strong {
+				display: none;
+			}
+		}
+	}
+
+	@media (max-width: 48rem) {
+		.name_tag {
+			font-size: 2.25rem;
+		}
+	}
+
+	@media (max-width: 26.562rem) {
+		.name_tag {
+			font-size: 10vw;
+			justify-content: center;
+
+			svg {
+				font-size: 8vw;
+			}
+		}
+	}
+</style>

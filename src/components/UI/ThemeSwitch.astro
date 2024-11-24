@@ -1,0 +1,78 @@
+---
+import SunIcon from '/icons/sun-icon.svg?raw';
+import MoonIcon from '/icons/moon-icon.svg?raw';
+---
+
+<div class='theme_switcher'>
+	<button id='light_theme_button'>
+		<Fragment set:html={SunIcon} />
+	</button>
+	<button id='dark_theme_button'>
+		<Fragment set:html={MoonIcon} />
+	</button>
+</div>
+
+<script is:inline>
+	const THEMES = { LIGHT: 'light', DARK: 'dark' };
+
+	const savedTheme = localStorage.getItem('crissvp_portfolio_theme');
+	const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+		? THEMES.DARK
+		: THEMES.LIGHT;
+
+	let activeTheme = savedTheme || systemTheme;
+
+	const updateTheme = (theme) => {
+		document.documentElement.classList.remove('light', 'dark');
+		document.documentElement.classList.add(theme);
+		localStorage.setItem('crissvp_portfolio_theme', theme);
+		activeTheme = theme;
+	};
+
+	updateTheme(activeTheme);
+
+	document.addEventListener('astro:page-load', () => {
+		const $darkThemeButton = document.getElementById('dark_theme_button');
+		const $lightThemeButton = document.getElementById('light_theme_button');
+
+		const changeThemeButton = (theme) => {
+			if (theme === THEMES.DARK) {
+				$darkThemeButton.style.display = 'none';
+				$lightThemeButton.style.display = 'flex';
+			} else {
+				$darkThemeButton.style.display = 'flex';
+				$lightThemeButton.style.display = 'none';
+			}
+		};
+
+		$darkThemeButton.addEventListener('click', () => {
+			updateTheme(THEMES.DARK);
+			changeThemeButton(THEMES.DARK);
+		});
+
+		$lightThemeButton.addEventListener('click', () => {
+			updateTheme(THEMES.LIGHT);
+			changeThemeButton(THEMES.LIGHT);
+		});
+
+		changeThemeButton(activeTheme);
+	});
+
+	document.addEventListener('astro:before-swap', (event) => {
+		event.newDocument.documentElement.classList.remove(THEMES.LIGHT, THEMES.DARK);
+		event.newDocument.documentElement.classList.add(activeTheme);
+	});
+</script>
+
+<style>
+	.theme_switcher button {
+		display: none;
+		height: 26px;
+		font-size: 1.625rem;
+		color: hsl(var(--text-color-secondary));
+	}
+
+	.theme_switcher button:hover {
+		color: hsl(var(--text-color-primary));
+	}
+</style>
